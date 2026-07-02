@@ -10,7 +10,7 @@ const Orders: React.FC = () => {
 
   useEffect(() => {
     api.getOrders().then(setOrders);
-    api.getProducts().then(setProducts);
+    api.getSliders().then(setProducts);
     api.getCustomers().then(setCustomers);
   }, []);
 

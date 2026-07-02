@@ -28,3 +28,9 @@ export const api = {
   updateOrderStatus: (id: number, s: string) => request(`/orders/${id}/status`, { method: 'PUT', body: JSON.stringify({ status: s }) }),
   getDashboard: () => request('/reports/dashboard'),
 };
+
+// Helper: get all products from both categories
+export const getAllProducts = async () => {
+  const [sliders, rails] = await Promise.all([api.getSliders(), api.getRails()]);
+  return [...sliders, ...rails];
+};
