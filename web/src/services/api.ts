@@ -10,32 +10,21 @@ async function request(path: string, options?: RequestInit) {
 }
 
 export const api = {
-  // Auth
-  login: (username: string, password: string) =>
-    request('/auth/login', { method: 'POST', body: JSON.stringify({ username, password }) }),
+  login: (u: string, p: string) => request('/auth/login', { method: 'POST', body: JSON.stringify({ username: u, password: p }) }),
 
-  // Products
-  getProducts: (params?: string) => request(`/products${params ? `?${params}` : ''}`),
-  getProduct: (id: number) => request(`/products/${id}`),
+  getSliders: () => request('/products/sliders'),
+  getRails: () => request('/products/rails'),
   createProduct: (data: any) => request('/products', { method: 'POST', body: JSON.stringify(data) }),
   updateProduct: (id: number, data: any) => request(`/products/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
   deleteProduct: (id: number) => request(`/products/${id}`, { method: 'DELETE' }),
-  getLowStock: () => request('/products/low-stock'),
-  getSeries: () => request('/products/series'),
+  batchDelete: (ids: number[]) => request('/products/batch-delete', { method: 'POST', body: JSON.stringify({ ids }) }),
+  batchImport: (items: any[]) => request('/products/batch-import', { method: 'POST', body: JSON.stringify(items) }),
+  exportAll: () => request('/products/export/all'),
 
-  // Customers
   getCustomers: (params?: string) => request(`/customers${params ? `?${params}` : ''}`),
-  getCustomer: (id: number) => request(`/customers/${id}`),
   createCustomer: (data: any) => request('/customers', { method: 'POST', body: JSON.stringify(data) }),
-  updateCustomer: (id: number, data: any) => request(`/customers/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
-  deleteCustomer: (id: number) => request(`/customers/${id}`, { method: 'DELETE' }),
-
-  // Orders
   getOrders: () => request('/orders'),
-  getOrder: (id: number) => request(`/orders/${id}`),
   createOrder: (data: any) => request('/orders', { method: 'POST', body: JSON.stringify(data) }),
-  updateOrderStatus: (id: number, status: string) => request(`/orders/${id}/status`, { method: 'PUT', body: JSON.stringify({ status }) }),
-
-  // Reports
+  updateOrderStatus: (id: number, s: string) => request(`/orders/${id}/status`, { method: 'PUT', body: JSON.stringify({ status: s }) }),
   getDashboard: () => request('/reports/dashboard'),
 };
