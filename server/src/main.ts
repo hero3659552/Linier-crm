@@ -16,12 +16,13 @@ async function bootstrap() {
   if (publicDir) {
     app.useStaticAssets(publicDir);
     
-    // SPA fallback - serve index.html for all non-API GET routes
+    // SPA catch-all: API routes pass through, everything else gets index.html
     const indexHtml = join(publicDir, 'index.html');
-    const express = require('express');
     if (fs.existsSync(indexHtml)) {
-      app.use('*', (req: any, res: any) => {
-        if (!req.path.startsWith('/api')) {
+      app.use((req: any, res: any, next: any) => {
+        if (req.path.startsWith('/api')) {
+          next();
+        } else {
           res.sendFile(indexHtml);
         }
       });
