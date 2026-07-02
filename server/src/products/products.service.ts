@@ -153,12 +153,33 @@ let products: Product[] = [
   { id: 118, code: 'SMS35BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '35', unit: '个', costPrice: 340, sellPrice: 580, stock: 40, minStock: 8, status: 'active' },
 
     // ==================== SR Series - 滚柱型直线导轨 ====================
-  { id: 32, code: 'SRH25CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '25', unit: '个', costPrice: 380, sellPrice: 650, stock: 100, minStock: 20, status: 'active' },
-  { id: 33, code: 'SRH30CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '30', unit: '个', costPrice: 520, sellPrice: 880, stock: 80, minStock: 15, status: 'active' },
-  { id: 34, code: 'SRH35CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '35', unit: '个', costPrice: 680, sellPrice: 1150, stock: 60, minStock: 15, status: 'active' },
-  { id: 35, code: 'SRH45CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '45', unit: '个', costPrice: 920, sellPrice: 1550, stock: 40, minStock: 10, status: 'active' },
-  { id: 36, code: 'SRH25R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '25', unit: '米', costPrice: 280, sellPrice: 480, stock: 150, minStock: 30, status: 'active' },
-  { id: 37, code: 'SRH35R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '35', unit: '米', costPrice: 520, sellPrice: 880, stock: 100, minStock: 20, status: 'active' },
+  // SRH-A 法兰型 (标准)
+  { id: 119, code: 'SRH20A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '20', unit: '个', costPrice: 300, sellPrice: 520, stock: 120, minStock: 25, status: 'active' },
+  { id: 120, code: 'SRH25A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '25', unit: '个', costPrice: 400, sellPrice: 680, stock: 100, minStock: 20, status: 'active' },
+  { id: 121, code: 'SRH30A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '30', unit: '个', costPrice: 550, sellPrice: 920, stock: 80, minStock: 15, status: 'active' },
+  { id: 122, code: 'SRH35A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '35', unit: '个', costPrice: 700, sellPrice: 1180, stock: 60, minStock: 15, status: 'active' },
+  { id: 123, code: 'SRH45A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '45', unit: '个', costPrice: 950, sellPrice: 1600, stock: 40, minStock: 10, status: 'active' },
+  { id: 124, code: 'SRH55A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '55', unit: '个', costPrice: 1500, sellPrice: 2500, stock: 20, minStock: 5, status: 'active' },
+  { id: 125, code: 'SRH65A', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'A', spec: '65', unit: '个', costPrice: 2200, sellPrice: 3600, stock: 12, minStock: 3, status: 'active' },
+  // SRH-AL 法兰型 (加长)
+  { id: 126, code: 'SRH25AL', name: 'SR滚柱型法兰加长滑块', series: 'SR', modelType: 'AL', spec: '25', unit: '个', costPrice: 520, sellPrice: 880, stock: 50, minStock: 10, status: 'active' },
+  { id: 127, code: 'SRH35AL', name: 'SR滚柱型法兰加长滑块', series: 'SR', modelType: 'AL', spec: '35', unit: '个', costPrice: 900, sellPrice: 1500, stock: 30, minStock: 8, status: 'active' },
+  { id: 128, code: 'SRH45AL', name: 'SR滚柱型法兰加长滑块', series: 'SR', modelType: 'AL', spec: '45', unit: '个', costPrice: 1250, sellPrice: 2100, stock: 20, minStock: 5, status: 'active' },
+  { id: 129, code: 'SRH55AL', name: 'SR滚柱型法兰加长滑块', series: 'SR', modelType: 'AL', spec: '55', unit: '个', costPrice: 1950, sellPrice: 3200, stock: 10, minStock: 3, status: 'active' },
+  { id: 130, code: 'SRH65AL', name: 'SR滚柱型法兰加长滑块', series: 'SR', modelType: 'AL', spec: '65', unit: '个', costPrice: 2900, sellPrice: 4800, stock: 6, minStock: 2, status: 'active' },
+  // SR-K 下锁式
+  { id: 131, code: 'SRH25K', name: 'SR滚柱下锁式滑块', series: 'SR', modelType: 'K', spec: '25', unit: '个', costPrice: 420, sellPrice: 720, stock: 80, minStock: 15, status: 'active' },
+  { id: 132, code: 'SRH35K', name: 'SR滚柱下锁式滑块', series: 'SR', modelType: 'K', spec: '35', unit: '个', costPrice: 740, sellPrice: 1250, stock: 50, minStock: 10, status: 'active' },
+  { id: 133, code: 'SRH45K', name: 'SR滚柱下锁式滑块', series: 'SR', modelType: 'K', spec: '45', unit: '个', costPrice: 1000, sellPrice: 1680, stock: 30, minStock: 8, status: 'active' },
+  // SR 导轨
+  { id: 134, code: 'SRH20R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '20', unit: '米', costPrice: 220, sellPrice: 380, stock: 200, minStock: 40, status: 'active' },
+  { id: 135, code: 'SRH25R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '25', unit: '米', costPrice: 290, sellPrice: 500, stock: 150, minStock: 30, status: 'active' },
+  { id: 136, code: 'SRH30R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '30', unit: '米', costPrice: 400, sellPrice: 680, stock: 120, minStock: 25, status: 'active' },
+  { id: 137, code: 'SRH35R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '35', unit: '米', costPrice: 530, sellPrice: 900, stock: 100, minStock: 20, status: 'active' },
+  { id: 138, code: 'SRH45R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '45', unit: '米', costPrice: 740, sellPrice: 1250, stock: 80, minStock: 15, status: 'active' },
+  { id: 139, code: 'SRH55R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '55', unit: '米', costPrice: 1100, sellPrice: 1850, stock: 50, minStock: 10, status: 'active' },
+  { id: 140, code: 'SRH65R', name: 'SR滚柱型导轨', series: 'SR', modelType: 'R', spec: '65', unit: '米', costPrice: 1600, sellPrice: 2600, stock: 30, minStock: 8, status: 'active' },
+
 
   // ==================== SV Series - 微型滑轨 ====================
   { id: 38, code: 'SV7CA', name: 'SV微型滑块', series: 'SV', modelType: 'CA', spec: '7', unit: '个', costPrice: 35, sellPrice: 65, stock: 300, minStock: 50, status: 'active' },
@@ -171,7 +192,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 119;let nextId = 22;
+let nextId = 141;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
