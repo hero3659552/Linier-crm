@@ -106,8 +106,19 @@ let products: Product[] = [
   { id: 81, code: 'SMH65R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '65', unit: '米', costPrice: 1100, sellPrice: 1850, stock: 80, minStock: 15, status: 'active' },
 
   // ==================== SMS Series - 高静音滑块型 ====================
-  { id: 82, code: 'SMS20CA', name: 'SM高静音滑块型', series: 'SM', modelType: 'CA', spec: '20', unit: '个', costPrice: 155, sellPrice: 280, stock: 130, minStock: 30, status: 'active' },
-  { id: 83, code: 'SMS30CA', name: 'SM高静音滑块型', series: 'SM', modelType: 'CA', spec: '30', unit: '个', costPrice: 285, sellPrice: 490, stock: 80, minStock: 20, status: 'active' },
+  // SMS-A 滑块型 (标准)
+  { id: 82, code: 'SMS15A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '15', unit: '个', costPrice: 120, sellPrice: 220, stock: 150, minStock: 30, status: 'active' },
+  { id: 83, code: 'SMS20A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '20', unit: '个', costPrice: 155, sellPrice: 280, stock: 130, minStock: 30, status: 'active' },
+  { id: 84, code: 'SMS25A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '25', unit: '个', costPrice: 210, sellPrice: 380, stock: 100, minStock: 20, status: 'active' },
+  { id: 85, code: 'SMS30A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '30', unit: '个', costPrice: 285, sellPrice: 490, stock: 80, minStock: 20, status: 'active' },
+  { id: 86, code: 'SMS35A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '35', unit: '个', costPrice: 380, sellPrice: 650, stock: 60, minStock: 15, status: 'active' },
+  { id: 87, code: 'SMS45A', name: 'SM高静音滑块型', series: 'SM', modelType: 'A', spec: '45', unit: '个', costPrice: 550, sellPrice: 920, stock: 40, minStock: 10, status: 'active' },
+  // SMS-AS 短型滑块
+  { id: 88, code: 'SMS15AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '15', unit: '个', costPrice: 100, sellPrice: 180, stock: 130, minStock: 25, status: 'active' },
+  { id: 89, code: 'SMS20AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '20', unit: '个', costPrice: 130, sellPrice: 240, stock: 120, minStock: 25, status: 'active' },
+  { id: 90, code: 'SMS25AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '25', unit: '个', costPrice: 175, sellPrice: 320, stock: 90, minStock: 18, status: 'active' },
+  { id: 91, code: 'SMS30AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '30', unit: '个', costPrice: 240, sellPrice: 420, stock: 70, minStock: 15, status: 'active' },
+  { id: 92, code: 'SMS35AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '35', unit: '个', costPrice: 320, sellPrice: 550, stock: 50, minStock: 10, status: 'active' },
 
     // ==================== SR Series - 滚柱型直线导轨 ====================
   { id: 32, code: 'SRH25CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '25', unit: '个', costPrice: 380, sellPrice: 650, stock: 100, minStock: 20, status: 'active' },
@@ -128,7 +139,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 84;let nextId = 22;
+let nextId = 93;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
