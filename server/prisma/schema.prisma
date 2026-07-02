@@ -1,0 +1,217 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  name      String
+  role      Role     @default(SALES)
+  email     String?
+  phone     String?
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders    Order[]
+  customers Customer[]
+}
+
+enum Role {
+  ADMIN
+  SALES
+  MANAGER
+  WAREHOUSE
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  code        String  @unique
+  name        String
+  series      String  // SG / SM / SR / SV / Accessory
+  modelType   String? // CA / HA / R / Kit 等
+  spec        String? // 规格 15/20/25/30/35/45
+  unit        String  @default("个")
+  costPrice   Float   @default(0)
+  sellPrice   Float   @default(0)
+  stock       Int     @default(0)
+  minStock    Int     @default(0)  // 安全库存
+  status      String  @default("active") // active / discontinued
+  description String?
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  bomItems        ProductBom[]  @relation("BomParent")
+  bomFor          ProductBom[]  @relation("BomChild")
+  orderItems      OrderItem[]
+  priceListItems  PriceListItem[]
+}
+
+model ProductBom {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  materialId Int
+  quantity  Float
+  unit      String
+
+  product  Product @relation("BomParent", fields: [productId], references: [id])
+  material Product @relation("BomChild", fields: [materialId], references: [id])
+
+  @@unique([productId, materialId])
+}
+
+model Customer {
+  id          Int      @id @default(autoincrement())
+  companyName String
+  contact     String?
+  phone       String?
+  email       String?
+  address     String?
+  region      String?
+  level       String   @default("普通") // 普通/银牌/金牌/钻石
+  source      String?
+  status      String   @default("潜在") // 潜在/跟进中/已成交/流失
+  tags        String?
+  salesId     Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sales       User?      @relation(fields: [salesId], references: [id])
+  contacts    Contact[]
+  orders      Order[]
+  activities  Activity[]
+}
+
+model Contact {
+  id         Int      @id @default(autoincrement())
+  customerId Int
+  name       String
+  title      String?
+  phone      String?
+  wechat     String?
+  birthday   DateTime?
+  note       String?
+
+  customer   Customer @relation(fields: [customerId], references: [id])
+}
+
+model Supplier {
+  id          Int      @id @default(autoincrement())
+  name        String
+  contact     String?
+  phone       String?
+  address     String?
+  creditLevel String?  // A/B/C/D
+  paymentDays Int?     // 账期天数
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+}
+
+model Order {
+  id          Int           @id @default(autoincrement())
+  orderNo     String        @unique
+  customerId  Int
+  salesId     Int?
+  orderDate   DateTime      @default(now())
+  totalAmount Float         @default(0)
+  status      OrderStatus   @default(QUOTATION)
+  quoteId     Int?          // 关联报价单
+  note        String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  customer    Customer      @relation(fields: [customerId], references: [id])
+  sales       User?         @relation(fields: [salesId], references: [id])
+  items       OrderItem[]
+  shipments   Shipment[]
+}
+
+enum OrderStatus {
+  QUOTATION
+  CONFIRMED
+  PRODUCING
+  SHIPPED
+  COMPLETED
+  CANCELLED
+}
+
+model OrderItem {
+  id        Int   @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int
+  unitPrice Float
+  amount    Float
+  shippedQty Int @default(0)
+
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model Shipment {
+  id          Int      @id @default(autoincrement())
+  shipmentNo  String   @unique
+  orderId     Int
+  shipDate    DateTime @default(now())
+  note        String?
+
+  order       Order    @relation(fields: [orderId], references: [id])
+  items       ShipmentItem[]
+}
+
+model ShipmentItem {
+  id          Int  @id @default(autoincrement())
+  shipmentId  Int
+  productId   Int
+  quantity    Int
+
+  shipment    Shipment @relation(fields: [shipmentId], references: [id])
+  product     Product  @relation(fields: [productId], references: [id])
+}
+
+model Activity {
+  id          Int      @id @default(autoincrement())
+  customerId  Int
+  type        String   // followup / checkin / call / visit
+  content     String
+  nextContact DateTime?
+  location    String?
+  salesId     Int?
+  createdAt   DateTime @default(now())
+
+  customer    Customer @relation(fields: [customerId], references: [id])
+}
+
+model PriceListItem {
+  id         Int   @id @default(autoincrement())
+  productId  Int
+  customerLevel String // 普通/银牌/金牌/钻石
+  price      Float
+  effectiveDate DateTime @default(now())
+
+  product    Product @relation(fields: [productId], references: [id])
+
+  @@unique([productId, customerLevel])
+}
+
+model Expense {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  customerId  Int?
+  expenseDate DateTime
+  category    String
+  amount      Float
+  note        String?
+  status      String   @default("pending") // pending / approved / rejected
+  createdAt   DateTime @default(now())
+}
+EOF
+
+echo "Prisma schema created"
