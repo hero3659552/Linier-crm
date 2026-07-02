@@ -3,13 +3,6 @@ dist/
 .env
 *.log
 .DS_Store
-catalog_images/page_*.png
-catalog_images/embedded/
-server/node_modules/
-server/dist/
+catalog_images/
 web/node_modules/
 web/build/
-.env
-*.log
-.DS_Store
-catalog_images/
