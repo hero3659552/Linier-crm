@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: linier_crm
+      POSTGRES_USER: linier
+      POSTGRES_PASSWORD: linier123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://linier:linier123@db:5432/linier_crm
+      PORT: 3000
+    depends_on:
+      - db
+
+  web:
+    build: ./web
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+volumes:
+  pgdata:
