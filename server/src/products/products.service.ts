@@ -138,6 +138,20 @@ let products: Product[] = [
   { id: 106, code: 'SMH55BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '55', unit: '个', costPrice: 1650, sellPrice: 2750, stock: 12, minStock: 3, status: 'active' },
   { id: 107, code: 'SMH65BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '65', unit: '个', costPrice: 2500, sellPrice: 4100, stock: 8, minStock: 2, status: 'active' },
 
+    // SMS-B 下锁滑块型 (标准)
+  { id: 108, code: 'SMS15B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '15', unit: '个', costPrice: 130, sellPrice: 240, stock: 120, minStock: 25, status: 'active' },
+  { id: 109, code: 'SMS20B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '20', unit: '个', costPrice: 165, sellPrice: 300, stock: 100, minStock: 20, status: 'active' },
+  { id: 110, code: 'SMS25B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '25', unit: '个', costPrice: 220, sellPrice: 400, stock: 80, minStock: 15, status: 'active' },
+  { id: 111, code: 'SMS30B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '30', unit: '个', costPrice: 300, sellPrice: 520, stock: 60, minStock: 12, status: 'active' },
+  { id: 112, code: 'SMS35B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '35', unit: '个', costPrice: 400, sellPrice: 680, stock: 45, minStock: 10, status: 'active' },
+  { id: 113, code: 'SMS45B', name: 'SM下锁滑块型', series: 'SM', modelType: 'B', spec: '45', unit: '个', costPrice: 580, sellPrice: 980, stock: 30, minStock: 8, status: 'active' },
+  // SMS-BS 下锁短型滑块
+  { id: 114, code: 'SMS15BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '15', unit: '个', costPrice: 105, sellPrice: 195, stock: 110, minStock: 20, status: 'active' },
+  { id: 115, code: 'SMS20BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '20', unit: '个', costPrice: 135, sellPrice: 250, stock: 90, minStock: 18, status: 'active' },
+  { id: 116, code: 'SMS25BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '25', unit: '个', costPrice: 185, sellPrice: 340, stock: 70, minStock: 15, status: 'active' },
+  { id: 117, code: 'SMS30BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '30', unit: '个', costPrice: 255, sellPrice: 440, stock: 55, minStock: 10, status: 'active' },
+  { id: 118, code: 'SMS35BS', name: 'SM下锁短型滑块', series: 'SM', modelType: 'BS', spec: '35', unit: '个', costPrice: 340, sellPrice: 580, stock: 40, minStock: 8, status: 'active' },
+
     // ==================== SR Series - 滚柱型直线导轨 ====================
   { id: 32, code: 'SRH25CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '25', unit: '个', costPrice: 380, sellPrice: 650, stock: 100, minStock: 20, status: 'active' },
   { id: 33, code: 'SRH30CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '30', unit: '个', costPrice: 520, sellPrice: 880, stock: 80, minStock: 15, status: 'active' },
@@ -157,7 +171,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 108;let nextId = 22;
+let nextId = 119;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
