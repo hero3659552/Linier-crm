@@ -9,29 +9,35 @@ async function bootstrap() {
   app.enableCors();
   app.setGlobalPrefix('api');
   
-  // Serve static frontend in production
-  const staticPaths = [
-    join(__dirname, '..', '..', 'public'),       // local dev
-    join(__dirname, '..', 'public'),              // nest dist
-    '/app/public',                                 // docker
-  ];
+  const port = process.env.PORT || 3000;
   
-  for (const p of staticPaths) {
-    if (fs.existsSync(p)) {
-      app.useStaticAssets(p);
-      // SPA fallback - serve index.html for all non-API routes
+  // Serve static frontend
+  const publicDir = findPublicDir();
+  if (publicDir) {
+    app.useStaticAssets(publicDir);
+    
+    // SPA fallback - serve index.html for all non-API GET routes
+    const indexHtml = join(publicDir, 'index.html');
+    const express = require('express');
+    if (fs.existsSync(indexHtml)) {
       app.use('*', (req: any, res: any) => {
         if (!req.path.startsWith('/api')) {
-          res.sendFile(join(p, 'index.html'));
+          res.sendFile(indexHtml);
         }
       });
-      console.log(`Serving static files from: ${p}`);
-      break;
     }
+    console.log(`利尼尔CRM frontend served from: ${publicDir}`);
   }
   
-  const port = process.env.PORT || 3000;
   await app.listen(port);
-  console.log(`利尼尔CRM running on http://localhost:${port}`);
+  console.log(`利尼尔CRM running: http://localhost:${port}`);
 }
+
+function findPublicDir(): string | null {
+  for (const p of [join(__dirname, '..', 'public'), '/app/public']) {
+    if (fs.existsSync(join(p, 'index.html'))) return p;
+  }
+  return null;
+}
+
 bootstrap();
