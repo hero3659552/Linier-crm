@@ -120,6 +120,24 @@ let products: Product[] = [
   { id: 91, code: 'SMS30AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '30', unit: '个', costPrice: 240, sellPrice: 420, stock: 70, minStock: 15, status: 'active' },
   { id: 92, code: 'SMS35AS', name: 'SM高静音短型滑块', series: 'SM', modelType: 'AS', spec: '35', unit: '个', costPrice: 320, sellPrice: 550, stock: 50, minStock: 10, status: 'active' },
 
+    // SMH-B 下锁法兰型 (标准)
+  { id: 93, code: 'SMH15B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '15', unit: '个', costPrice: 140, sellPrice: 250, stock: 120, minStock: 25, status: 'active' },
+  { id: 94, code: 'SMH20B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '20', unit: '个', costPrice: 190, sellPrice: 340, stock: 100, minStock: 20, status: 'active' },
+  { id: 95, code: 'SMH25B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '25', unit: '个', costPrice: 250, sellPrice: 440, stock: 80, minStock: 15, status: 'active' },
+  { id: 96, code: 'SMH30B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '30', unit: '个', costPrice: 350, sellPrice: 600, stock: 60, minStock: 12, status: 'active' },
+  { id: 97, code: 'SMH35B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '35', unit: '个', costPrice: 440, sellPrice: 750, stock: 50, minStock: 10, status: 'active' },
+  { id: 98, code: 'SMH45B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '45', unit: '个', costPrice: 630, sellPrice: 1050, stock: 35, minStock: 8, status: 'active' },
+  { id: 99, code: 'SMH55B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '55', unit: '个', costPrice: 1250, sellPrice: 2100, stock: 20, minStock: 5, status: 'active' },
+  { id: 100, code: 'SMH65B', name: 'SM下锁法兰型滑块', series: 'SM', modelType: 'B', spec: '65', unit: '个', costPrice: 1900, sellPrice: 3200, stock: 12, minStock: 3, status: 'active' },
+  // SMH-BL 下锁法兰型 (加长)
+  { id: 101, code: 'SMH20BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '20', unit: '个', costPrice: 240, sellPrice: 420, stock: 60, minStock: 12, status: 'active' },
+  { id: 102, code: 'SMH25BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '25', unit: '个', costPrice: 320, sellPrice: 560, stock: 50, minStock: 10, status: 'active' },
+  { id: 103, code: 'SMH30BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '30', unit: '个', costPrice: 450, sellPrice: 760, stock: 40, minStock: 8, status: 'active' },
+  { id: 104, code: 'SMH35BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '35', unit: '个', costPrice: 580, sellPrice: 960, stock: 30, minStock: 6, status: 'active' },
+  { id: 105, code: 'SMH45BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '45', unit: '个', costPrice: 820, sellPrice: 1360, stock: 20, minStock: 5, status: 'active' },
+  { id: 106, code: 'SMH55BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '55', unit: '个', costPrice: 1650, sellPrice: 2750, stock: 12, minStock: 3, status: 'active' },
+  { id: 107, code: 'SMH65BL', name: 'SM下锁法兰加长滑块', series: 'SM', modelType: 'BL', spec: '65', unit: '个', costPrice: 2500, sellPrice: 4100, stock: 8, minStock: 2, status: 'active' },
+
     // ==================== SR Series - 滚柱型直线导轨 ====================
   { id: 32, code: 'SRH25CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '25', unit: '个', costPrice: 380, sellPrice: 650, stock: 100, minStock: 20, status: 'active' },
   { id: 33, code: 'SRH30CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '30', unit: '个', costPrice: 520, sellPrice: 880, stock: 80, minStock: 15, status: 'active' },
@@ -139,7 +157,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 93;let nextId = 22;
+let nextId = 108;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
