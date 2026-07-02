@@ -88,7 +88,28 @@ let products: Product[] = [
   { id: 30, code: 'SMH35R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '35', unit: '米', costPrice: 350, sellPrice: 590, stock: 200, minStock: 40, status: 'active' },
   { id: 31, code: 'SMH45R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '45', unit: '米', costPrice: 510, sellPrice: 860, stock: 150, minStock: 30, status: 'active' },
 
-  // ==================== SR Series - 滚柱型直线导轨 ====================
+  // SMH-AL 法兰型加长滑块
+  { id: 69, code: 'SMH20CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '20', unit: '个', costPrice: 230, sellPrice: 400, stock: 80, minStock: 15, status: 'active' },
+  { id: 70, code: 'SMH25CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '25', unit: '个', costPrice: 310, sellPrice: 540, stock: 60, minStock: 12, status: 'active' },
+  { id: 71, code: 'SMH30CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '30', unit: '个', costPrice: 430, sellPrice: 720, stock: 50, minStock: 10, status: 'active' },
+  { id: 72, code: 'SMH35CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '35', unit: '个', costPrice: 550, sellPrice: 920, stock: 40, minStock: 10, status: 'active' },
+  { id: 73, code: 'SMH45CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '45', unit: '个', costPrice: 780, sellPrice: 1300, stock: 30, minStock: 8, status: 'active' },
+  // SMH - 大规格
+  { id: 74, code: 'SMH55CA', name: 'SM高静音法兰型滑块', series: 'SM', modelType: 'CA', spec: '55', unit: '个', costPrice: 1200, sellPrice: 2000, stock: 20, minStock: 5, status: 'active' },
+  { id: 75, code: 'SMH65CA', name: 'SM高静音法兰型滑块', series: 'SM', modelType: 'CA', spec: '65', unit: '个', costPrice: 1800, sellPrice: 3000, stock: 15, minStock: 3, status: 'active' },
+  { id: 76, code: 'SMH55CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '55', unit: '个', costPrice: 1600, sellPrice: 2600, stock: 12, minStock: 3, status: 'active' },
+  { id: 77, code: 'SMH65CAL', name: 'SM高静音法兰加长滑块', series: 'SM', modelType: 'CAL', spec: '65', unit: '个', costPrice: 2400, sellPrice: 3900, stock: 10, minStock: 2, status: 'active' },
+  // SM 导轨
+  { id: 78, code: 'SMH20R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '20', unit: '米', costPrice: 130, sellPrice: 230, stock: 350, minStock: 70, status: 'active' },
+  { id: 79, code: 'SMH30R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '30', unit: '米', costPrice: 260, sellPrice: 440, stock: 250, minStock: 50, status: 'active' },
+  { id: 80, code: 'SMH55R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '55', unit: '米', costPrice: 800, sellPrice: 1350, stock: 100, minStock: 20, status: 'active' },
+  { id: 81, code: 'SMH65R', name: 'SM高静音导轨', series: 'SM', modelType: 'R', spec: '65', unit: '米', costPrice: 1100, sellPrice: 1850, stock: 80, minStock: 15, status: 'active' },
+
+  // ==================== SMS Series - 高静音滑块型 ====================
+  { id: 82, code: 'SMS20CA', name: 'SM高静音滑块型', series: 'SM', modelType: 'CA', spec: '20', unit: '个', costPrice: 155, sellPrice: 280, stock: 130, minStock: 30, status: 'active' },
+  { id: 83, code: 'SMS30CA', name: 'SM高静音滑块型', series: 'SM', modelType: 'CA', spec: '30', unit: '个', costPrice: 285, sellPrice: 490, stock: 80, minStock: 20, status: 'active' },
+
+    // ==================== SR Series - 滚柱型直线导轨 ====================
   { id: 32, code: 'SRH25CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '25', unit: '个', costPrice: 380, sellPrice: 650, stock: 100, minStock: 20, status: 'active' },
   { id: 33, code: 'SRH30CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '30', unit: '个', costPrice: 520, sellPrice: 880, stock: 80, minStock: 15, status: 'active' },
   { id: 34, code: 'SRH35CA', name: 'SR滚柱型法兰滑块', series: 'SR', modelType: 'CA', spec: '35', unit: '个', costPrice: 680, sellPrice: 1150, stock: 60, minStock: 15, status: 'active' },
@@ -107,7 +128,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 69;let nextId = 22;
+let nextId = 84;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
