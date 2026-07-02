@@ -47,6 +47,22 @@ let products: Product[] = [
   { id: 22, code: 'SGH35R', name: 'SG高扭矩导轨', series: 'SG', modelType: 'R', spec: '35', unit: '米', costPrice: 300, sellPrice: 510, stock: 250, minStock: 50, status: 'active' },
   { id: 23, code: 'SGH45R', name: 'SG高扭矩导轨', series: 'SG', modelType: 'R', spec: '45', unit: '米', costPrice: 450, sellPrice: 750, stock: 200, minStock: 40, status: 'active' },
 
+    // SGH-B 下锁法兰型滑块 (标准)
+  { id: 46, code: 'SGH15B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '15', unit: '个', costPrice: 130, sellPrice: 230, stock: 180, minStock: 40, status: 'active' },
+  { id: 47, code: 'SGH20B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '20', unit: '个', costPrice: 160, sellPrice: 290, stock: 160, minStock: 35, status: 'active' },
+  { id: 48, code: 'SGH25B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '25', unit: '个', costPrice: 210, sellPrice: 380, stock: 130, minStock: 25, status: 'active' },
+  { id: 49, code: 'SGH30B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '30', unit: '个', costPrice: 290, sellPrice: 500, stock: 100, minStock: 20, status: 'active' },
+  { id: 50, code: 'SGH35B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '35', unit: '个', costPrice: 380, sellPrice: 650, stock: 80, minStock: 15, status: 'active' },
+  { id: 51, code: 'SGH45B', name: 'SG下锁法兰型滑块', series: 'SG', modelType: 'B', spec: '45', unit: '个', costPrice: 550, sellPrice: 920, stock: 60, minStock: 10, status: 'active' },
+  // SGH-BL 下锁法兰型滑块 (加长)
+  { id: 52, code: 'SGH20BL', name: 'SG下锁法兰加长滑块', series: 'SG', modelType: 'BL', spec: '20', unit: '个', costPrice: 200, sellPrice: 360, stock: 80, minStock: 20, status: 'active' },
+  { id: 53, code: 'SGH25BL', name: 'SG下锁法兰加长滑块', series: 'SG', modelType: 'BL', spec: '25', unit: '个', costPrice: 270, sellPrice: 480, stock: 70, minStock: 15, status: 'active' },
+  { id: 54, code: 'SGH30BL', name: 'SG下锁法兰加长滑块', series: 'SG', modelType: 'BL', spec: '30', unit: '个', costPrice: 370, sellPrice: 640, stock: 50, minStock: 12, status: 'active' },
+  { id: 55, code: 'SGH35BL', name: 'SG下锁法兰加长滑块', series: 'SG', modelType: 'BL', spec: '35', unit: '个', costPrice: 490, sellPrice: 820, stock: 40, minStock: 10, status: 'active' },
+  { id: 56, code: 'SGH45BL', name: 'SG下锁法兰加长滑块', series: 'SG', modelType: 'BL', spec: '45', unit: '个', costPrice: 700, sellPrice: 1180, stock: 30, minStock: 8, status: 'active' },
+  // SGS-AS 短型滑块
+  { id: 57, code: 'SGS20AS', name: 'SG短型滑块', series: 'SG', modelType: 'AS', spec: '20', unit: '个', costPrice: 120, sellPrice: 220, stock: 140, minStock: 30, status: 'active' },
+
   // ==================== SM Series - 高静音重负荷型 ====================
   { id: 24, code: 'SMH20CA', name: 'SM高静音法兰型滑块', series: 'SM', modelType: 'CA', spec: '20', unit: '个', costPrice: 180, sellPrice: 320, stock: 150, minStock: 30, status: 'active' },
   { id: 25, code: 'SMH25CA', name: 'SM高静音法兰型滑块', series: 'SM', modelType: 'CA', spec: '25', unit: '个', costPrice: 240, sellPrice: 420, stock: 120, minStock: 25, status: 'active' },
@@ -76,7 +92,7 @@ let products: Product[] = [
   { id: 45, code: 'SV15R', name: 'SV微型导轨', series: 'SV', modelType: 'R', spec: '15', unit: '米', costPrice: 60, sellPrice: 110, stock: 250, minStock: 50, status: 'active' },
 ];
 
-let nextId = 46;let nextId = 22;
+let nextId = 58;let nextId = 22;
 
 @Injectable()
 export class ProductsService {
